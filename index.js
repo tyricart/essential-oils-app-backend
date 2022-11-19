@@ -33,7 +33,8 @@ app.post('/add-oil', async (request, response) => {
 })
 
 // DELETE 
-app.delete('/remove-oil', async (request, response) => {
+app.delete('/remove-oil', async (request, response) => { 
+    console.log(request.query)
     await oils.findOneAndDelete(request.query)
     response.json("Oil was deleted")
 })
